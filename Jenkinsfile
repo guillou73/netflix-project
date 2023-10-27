@@ -27,7 +27,7 @@ pipeline{
             steps{
                 withSonarQubeEnv('sonar-server') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=NetflixZomatoApp \
-                    -Dsonar.projectKey=NetflixZomatoApp '''
+                    -Dsonar.projectKey=Terraform '''
                 }
             }
         }
