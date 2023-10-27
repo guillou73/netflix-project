@@ -26,8 +26,8 @@ pipeline{
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Netflix-App-CICD \
-                    -Dsonar.projectKey=Netflix-App-CICD '''
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=NetflixZomatoApp \
+                    -Dsonar.projectKey=NetflixZomatoApp '''
                 }
             }
         }
