@@ -3,5 +3,5 @@ output "websiteendpoint" {
 }
 
 output "public_ip" {
-    value = aws_instance.Neo.public_ip 
+    value = aws_instance.Gaetan.public_ip 
 }
