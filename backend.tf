@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "gaetan-group10-bucket"
+    bucket         = "netflix-setup"
     key            = "my-terraform-environment/main"
     region         = "us-east-1"
-    dynamodb_table = "group10-dynamo-db-cicd-table"
+    dynamodb_table = "netflix-dbtable"
   }
 }

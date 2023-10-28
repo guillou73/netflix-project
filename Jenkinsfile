@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Gaetanneo/Zomato-NetflixApp-TERRAFORM-JENKINS-CICD.git'
+                git branch: 'main', url: 'https://github.com/guillou73/netflix-project.git'
             }
         }
         stage('Terraform version'){
@@ -26,7 +26,7 @@ pipeline{
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=NetflixZomatoApp \
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=netflix-pro \
                     -Dsonar.projectKey=Terraform '''
                 }
             }
@@ -48,21 +48,5 @@ pipeline{
                 sh 'chmod 777 website.sh'
             }
         }
-        stage('Terraform init'){
-            steps{
-                sh 'terraform init'
-            }
-        }
-        stage('Terraform plan'){
-            steps{
-                sh 'terraform plan'
-            }
-        }
-        stage('Terraform apply'){
-            steps{
-                sh 'terraform ${action} --auto-approve'
-            }
-        }
-        
     }
 }

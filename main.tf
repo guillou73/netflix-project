@@ -1,11 +1,11 @@
-resource "aws_instance" "Gaetan" {
+resource "aws_instance" "Guy" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
   user_data              = base64encode(file("website.sh"))
   tags = {
-    Name = "Neo-EC2"
+    Name = "Guy-ec2"
   }
 }
 
@@ -56,6 +56,6 @@ resource "aws_security_group" "ec2_security_group" {
   }
 
   tags = {
-    Name = "Neo_sg"
+    Name = "Guy_sg"
   }
 }
