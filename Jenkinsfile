@@ -43,5 +43,16 @@ pipeline{
                 sh "trivy fs . > trivyfs.txt"
             }
         }
+        }
+        stage('Terraform init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform plan'){
+            steps{
+                sh 'terraform plan'
+            }
+        }
     }
 }
