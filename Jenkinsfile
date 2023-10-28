@@ -43,6 +43,10 @@ pipeline{
                 sh "trivy fs . > trivyfs.txt"
             }
         }
+        stage('Excutable permission to userdata'){
+            steps{
+                sh 'chmod 777 website.sh'
+            }
         }
         stage('Terraform init'){
             steps{
@@ -56,4 +60,3 @@ pipeline{
         }
     }
 }
-
